@@ -4,9 +4,9 @@
   "description": "Server-side of the app built with ExpressJS",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js",
+    "start": "server/node_modules/nodemon/bin/nodemon.js src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cd ../client && npm build"
+    "postinstall": "cd client && npm build"
   },
   "keywords": [],
   "author": "",
