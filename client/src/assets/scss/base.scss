@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background: #{$bg-base};
+}
+
+p, h2 {
+  margin: 0;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,128 @@
+/*
+** LOADING NEUTRA
+*/
+
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-BoldItalic.otf');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-Demi.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-DemiItalic.otf');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-Book.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-BookItalic.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Neutra';
+  src: url('../font/Neutra/Neutraface2Text-LightItalic.otf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@mixin neutrafont($weight, $style){
+  font-family: Neutra;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+
+/*
+** LOADING Droid
+*/
+
+@font-face {
+  font-family: 'Droid';
+  src: url('../font/Droid/DroidSerif-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Droid';
+  src: url('../font/Droid/DroidSerif-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Droid';
+  src: url('../font/Droid/DroidSerif-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Droid';
+  src: url('../font/Droid/DroidSerif-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@mixin droidfont ($weight, $style){
+  font-family: Droid;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+/*
+** LOADING Brandon
+*/
+
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('../font/Brandon/Brandon_med.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon';
+  src: url('../font/Brandon/Brandon_reg.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Brandon';
+  src: url('../font/Brandon/Brandon_reg_it.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@mixin brandonfont ($weight, $style){
+  font-family: Brandon;
+  font-weight: $weight;
+  font-style: $style;
+}

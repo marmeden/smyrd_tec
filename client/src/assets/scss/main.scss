@@ -1,0 +1,273 @@
+@import "typography.scss";
+@import "colors.scss";
+@import "spacing.scss";
+@import "flexbox.scss";
+@import "base.scss";
+
+.heading {
+  background-color: #{$bg-base-clr};
+  padding: #{$std-spacing} #{$sm-spacing};
+  @extend %flex--row;
+  @include justify-content(center);
+}
+
+.heading__cntnt {
+  @extend %flex--row;
+  @include justify-content(space-between);
+  @include align-items(center);
+  @include flex(1);
+  width: 100%;
+  
+  img {
+    width: 100px;
+  }
+
+  .heading__search {
+    @extend %flex--row;
+    @include flex(1);
+    @include align-items(center);
+    margin-left: #{$xs-spacing};
+    max-width: #{$card-dim};
+
+    .search__content {
+      @extend %flex--row;
+      @include justify-content(flex-start);
+      background-color: #{$bg-base};
+      padding: 0.75rem;
+      border-radius: 20px;
+      width: 100%;
+
+      i {
+        font-size: 1rem;
+        margin-right: 1rem;
+      }
+
+      input {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.feed {
+  padding: #{$sm-spacing};
+  display: grid;
+  grid-gap: #{$xs-spacing};
+  grid-template-columns: 1fr;
+
+  @media screen and(min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, #{$card-dim});
+    @include justify-content(center);
+  }
+
+  .post__item {
+    position: relative;
+    outline: 1px solid #{$grey};
+
+    .img__cntnt {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .item__badge {
+      width: 160px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: #{$xs-spacing};
+      @extend %flex--row;
+      @include justify-content(flex-start);
+      background-color: #{$bg-base-clr};
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
+
+      span {
+        font-size: 1.25rem;
+        @include brandonfont(500, normal);
+      }
+    }
+
+    .item__meta__general {
+      padding: #{$xs-spacing};
+      border-bottom: 1px solid #{$grey};
+
+      .meta__title {
+        @include neutrafont(400, normal);
+        text-transform: uppercase;
+        color: #{$black};
+      }
+
+      .meta__author {
+        @include droidfont(400, normal);
+        color: #{$font-grey};
+        text-transform: lowercase;
+
+        a {
+          color: #{$black};
+        }
+      }
+    }
+
+    .item__meta__inter{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+
+      .inter__action {
+        @extend %flex--row;
+        @include justify-content(center);
+        padding: #{$xxs-spacing};
+        text-decoration: none;
+        cursor: pointer;
+
+        &:first-child {
+          border-right: 1px solid #{$grey};
+        }
+
+        &:nth-child(2n + 1) {
+          p {
+            margin-right: 1rem;
+          }
+        }
+
+        &:nth-child(2n) {
+          p {
+            margin-left: 1rem;
+          }
+        }
+
+        p {
+          @include brandonfont(500, normal);
+          color: #{$grey};
+          outline: none;
+          line-height: 36px;
+        }
+
+        span {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: #{$grey};
+          i {
+            line-height: 36px;
+            color: #{$bg-base-clr};
+          }   
+        }
+
+        &.action--rt {
+          @include flex-direction(row-reverse);
+        }
+
+      }
+    }
+
+    &.liked {
+      .action--like {
+        span {
+          background-color: #{$green};
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: $break-2cols) {
+  .heading__cntnt {
+    max-width: #{$lay2colswidth};
+  }
+
+  .feed {
+    .post__item {
+      .img__cntnt {
+        width: #{$card-dim};
+        height: #{$card-dim};
+      }
+      .item__meta__general {
+        border-bottom: none;
+      }
+      .item__meta__inter {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        opacity: 0;
+        transition: all 0.3s ease;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    
+        .inter__action {
+          padding: #{$xxs-spacing} #{$xs-spacing};
+
+          p {
+            color: #{$bg-base-clr};
+          }
+
+          span {
+            background-color: #{$bg-base-clr};
+
+            i {
+              color: #{$grey};
+            }
+          }
+
+          &:first-child {
+            border: none;
+          }
+
+          &:nth-child(2n + 1), &:nth-child(2n) {
+            p {
+              margin: 0;
+            }
+          } 
+          &.action--like, &.action--rt {
+            @include flex-direction(column-reverse);
+          }
+        }
+      }
+
+      &.liked {
+        .item__meta__inter {
+          .inter__action.action--like {
+            span {
+              background-color: #{$green};
+  
+              i {
+                color: #{$bg-base-clr};
+              }
+            }
+          }
+        }
+      }
+
+      &.hovered {
+        .item__meta__inter {
+          opacity: 1;
+        }
+        .img__cntnt:after {
+          transition: all 0.3s ease;
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-3cols) {
+  .heading__cntnt {
+    max-width: #{$lay3colswidth};
+  }
+}
