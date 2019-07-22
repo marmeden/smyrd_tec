@@ -7,6 +7,8 @@ $std-spacing: calc(#{$base-spacing} * 2);
 $lg-spacing:  calc(#{$base-spacing} * 4);
 
 $card-dim: 400px;
+$badge-width: 160px;
+$badge-height: 100px;
 $max-cards: 4;
 $layout-max-width: calc(#{$max-cards} * #{$card-dim} + calc(#{$max-cards} - 1) * #{$xs-spacing});
 

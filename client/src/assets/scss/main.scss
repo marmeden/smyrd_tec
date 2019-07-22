@@ -81,8 +81,9 @@
     }
   
     .item__badge {
-      width: 160px;
-      height: 100px;
+      width: #{$badge-width};
+      height: #{$badge-height};
+      box-sizing: border-box;
       position: absolute;
       top: 0;
       left: 0;
