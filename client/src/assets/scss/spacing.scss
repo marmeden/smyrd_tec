@@ -17,7 +17,3 @@ $break-4cols: calc(#{$card-dim} * 4 + #{$sm-spacing} * 2 + #{$xs-spacing} * 3);
 $lay2colswidth: calc(#{$card-dim} * 2 + #{$xs-spacing});
 $lay3colswidth: calc(#{$card-dim} * 3 + #{$xs-spacing} * 2);
 $lay4colswidth: calc(#{$card-dim} * 4 + #{$xs-spacing} * 3);
-
-.smy__view {
-  max-width: #{$lay4colswidth};
-}

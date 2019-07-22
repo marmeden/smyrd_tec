@@ -271,3 +271,9 @@
     max-width: #{$lay3colswidth};
   }
 }
+
+@media screen and (min-width: $break-4cols) {
+  .heading__cntnt {
+    max-width: #{$lay4colswidth};
+  }
+}
