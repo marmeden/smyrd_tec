@@ -1,5 +1,5 @@
 <template>
-  <div class="feed__wrapper">
+  <div class="feed__cntnt">
     <div class="feed">
       <div v-for="post in postfetched" :key="post.id">
         <post
