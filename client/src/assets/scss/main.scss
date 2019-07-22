@@ -19,7 +19,7 @@
   width: 100%;
   
   img {
-    width: 100px;
+    width: #{$logo-dim-sm};
   }
 
   .heading__search {
@@ -188,6 +188,10 @@
 @media screen and (min-width: $break-2cols) {
   .heading__cntnt {
     max-width: #{$lay2colswidth};
+
+    img {
+      width: #{$logo-dim};
+    }
   }
 
   .feed {
@@ -210,10 +214,11 @@
         grid-template-columns: 1fr;
     
         .inter__action {
-          padding: #{$xxs-spacing} #{$xs-spacing};
+          padding: #{$xxs-spacing} #{$xs-spacing} 0 #{$xs-spacing};
 
           p {
             color: #{$bg-base-clr};
+            line-height: 28px;
           }
 
           span {
