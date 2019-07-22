@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "samyroadfeedclient",
   "version": "1.0.0",
   "description": "Client-side part of the stack built in VueJS",
   "author": "marmeden <itsme@eneasmarin.es>",

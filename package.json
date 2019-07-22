@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "samyroadfeedserver",
   "version": "1.0.0",
   "description": "Server-side of the app built with ExpressJS",
   "main": "index.js",
