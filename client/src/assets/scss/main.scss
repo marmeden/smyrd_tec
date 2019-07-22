@@ -51,126 +51,131 @@
   }
 }
 
-.feed {
-  padding: #{$sm-spacing};
-  display: grid;
-  grid-gap: #{$xs-spacing};
-  grid-template-columns: 1fr;
+.feed__wrapper {
+  @extend %flex--row;
+  @include justify-content(center);
 
-  @media screen and(min-width: 640px) {
-    grid-template-columns: repeat(auto-fill, #{$card-dim});
-    @include justify-content(center);
-  }
-
-  .post__item {
-    position: relative;
-    outline: 1px solid #{$grey};
-
-    .img__cntnt {
+  .feed {
+    padding: #{$sm-spacing};
+    display: grid;
+    grid-gap: #{$xs-spacing};
+    grid-template-columns: 1fr;
+  
+    @media screen and(min-width: 640px) {
+      grid-template-columns: repeat(auto-fill, #{$card-dim});
+      @include justify-content(center);
+    }
+  
+    .post__item {
       position: relative;
-
-      img {
-        width: 100%;
+      outline: 1px solid #{$grey};
+  
+      .img__cntnt {
+        position: relative;
+  
+        img {
+          width: 100%;
+        }
       }
-    }
-
-    .item__badge {
-      width: 160px;
-      height: 100px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: #{$xs-spacing};
-      @extend %flex--row;
-      @include justify-content(flex-start);
-      background-color: #{$bg-base-clr};
-      clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
-      -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
-
-      span {
-        font-size: 1.25rem;
-        @include brandonfont(500, normal);
+  
+      .item__badge {
+        width: 160px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: #{$xs-spacing};
+        @extend %flex--row;
+        @include justify-content(flex-start);
+        background-color: #{$bg-base-clr};
+        clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
+  
+        span {
+          font-size: 1.25rem;
+          @include brandonfont(500, normal);
+        }
       }
-    }
-
-    .item__meta__general {
-      padding: #{$xs-spacing};
-      border-bottom: 1px solid #{$grey};
-
-      .meta__title {
-        @include neutrafont(400, normal);
-        text-transform: uppercase;
-        color: #{$black};
-      }
-
-      .meta__author {
-        @include droidfont(400, normal);
-        color: #{$font-grey};
-        text-transform: lowercase;
-
-        a {
+  
+      .item__meta__general {
+        padding: #{$xs-spacing};
+        border-bottom: 1px solid #{$grey};
+  
+        .meta__title {
+          @include neutrafont(400, normal);
+          text-transform: uppercase;
           color: #{$black};
         }
+  
+        .meta__author {
+          @include droidfont(400, normal);
+          color: #{$font-grey};
+          text-transform: lowercase;
+  
+          a {
+            color: #{$black};
+          }
+        }
       }
-    }
-
-    .item__meta__inter{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      
-
-      .inter__action {
-        @extend %flex--row;
-        @include justify-content(center);
-        padding: #{$xxs-spacing};
-        text-decoration: none;
-        cursor: pointer;
-
-        &:first-child {
-          border-right: 1px solid #{$grey};
-        }
-
-        &:nth-child(2n + 1) {
-          p {
-            margin-right: 1rem;
+  
+      .item__meta__inter{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+  
+        .inter__action {
+          @extend %flex--row;
+          @include justify-content(center);
+          padding: #{$xxs-spacing};
+          text-decoration: none;
+          cursor: pointer;
+  
+          &:first-child {
+            border-right: 1px solid #{$grey};
           }
-        }
-
-        &:nth-child(2n) {
-          p {
-            margin-left: 1rem;
+  
+          &:nth-child(2n + 1) {
+            p {
+              margin-right: 1rem;
+            }
           }
-        }
-
-        p {
-          @include brandonfont(500, normal);
-          color: #{$grey};
-          outline: none;
-          line-height: 36px;
-        }
-
-        span {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background-color: #{$grey};
-          i {
+  
+          &:nth-child(2n) {
+            p {
+              margin-left: 1rem;
+            }
+          }
+  
+          p {
+            @include brandonfont(500, normal);
+            color: #{$grey};
+            outline: none;
             line-height: 36px;
-            color: #{$bg-base-clr};
-          }   
+          }
+  
+          span {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #{$grey};
+            i {
+              line-height: 36px;
+              color: #{$bg-base-clr};
+            }   
+          }
+  
+          &.action--rt {
+            @include flex-direction(row-reverse);
+          }
+  
         }
-
-        &.action--rt {
-          @include flex-direction(row-reverse);
-        }
-
       }
-    }
-
-    &.liked {
-      .action--like {
-        span {
-          background-color: #{$green};
+  
+      &.liked {
+        .action--like {
+          span {
+            background-color: #{$green};
+          }
         }
       }
     }

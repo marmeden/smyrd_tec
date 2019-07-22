@@ -1,10 +1,12 @@
 <template>
-  <div class="feed">
-    <div v-for="post in postfetched" :key="post.id">
-      <post
-        :post="post"
-        @updatedLike="onUpdatedLikeFromFeed">
-      </post>
+  <div class="feed__wrapper">
+    <div class="feed">
+      <div v-for="post in postfetched" :key="post.id">
+        <post
+          :post="post"
+          @updatedLike="onUpdatedLikeFromFeed">
+        </post>
+      </div>
     </div>
   </div>
 </template>
