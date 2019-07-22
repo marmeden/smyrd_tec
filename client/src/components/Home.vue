@@ -47,7 +47,7 @@ export default {
   },
 
   mounted () {
-    fetch(this.myURL + '/test')
+    fetch(this.myURL + 'test')
       .then((response) => response.json())
       .then(result => {
         this.postfetched = result
