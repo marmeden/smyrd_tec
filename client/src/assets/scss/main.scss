@@ -61,6 +61,7 @@
   display: grid;
   grid-gap: #{$xs-spacing};
   grid-template-columns: 1fr;
+  width: 100%;
   
   @media screen and(min-width: 640px) {
     grid-template-columns: repeat(auto-fill, #{$card-dim});
