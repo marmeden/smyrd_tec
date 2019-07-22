@@ -273,7 +273,7 @@
 }
 
 @media screen and (min-width: $break-4cols) {
-  .heading__cntnt {
+  .heading__cntnt, .feed {
     max-width: #{$lay4colswidth};
   }
 }
