@@ -33,11 +33,21 @@ export default {
       return this.postfetched.filter((mypost) => {
         return mypost.title.toLowerCase().includes(this.search.toLowerCase()) || mypost.author.toLowerCase().includes(this.search.toLowerCase()) || mypost.price.toString().includes(this.search.toLowerCase())
       })
+    },
+    myURL: function () {
+      var environment = ''
+      if (process.env.NODE_ENV === 'development') {
+        environment = 'http://localhost:8081/'
+      } else {
+        environment = 'https://marmedensmy.herokuapp.com/'
+      }
+
+      return environment
     }
   },
 
   mounted () {
-    fetch('http://localhost:8081/test')
+    fetch(this.myURL + '/test')
       .then((response) => response.json())
       .then(result => {
         this.postfetched = result
