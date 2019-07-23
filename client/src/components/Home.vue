@@ -21,7 +21,6 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
       search: '',
       postfetched: [],
       jsonready: false

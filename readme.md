@@ -1,6 +1,7 @@
 # Samyroad Tech by Eneas Marín
 
 SPA built in a MEVN stack with no database
+Code linted with ESLint
 
 ![alt text](https://github.com/marmeden/smyrd_tec/blob/master/smy.png)
 
