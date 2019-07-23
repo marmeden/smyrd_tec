@@ -15,7 +15,7 @@ npm run dev
 ```
 
 #### Server
-Navigate to server folder and the following command. Server should be running on localhost:8081 by default and serving what's inside the /dist folder of the client
+Navigate to server folder and run the following command. Server should be running on localhost:8081 by default and serving what's inside the /dist folder of the client
 
 ```bash
 node src/app.js
