@@ -93,10 +93,26 @@
       background-color: #{$bg-base-clr};
       clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
       -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 0%);
-  
+
+      .badge__cntnt {
+        @extend %flex--row;
+        @include justify-content(flex-start);
+        @include align-items(flex-end);
+        height: max-content;
+      }
+
       span {
-        font-size: 1.25rem;
+        display: table;
         @include brandonfont(500, normal);
+      }
+  
+      span.price {
+        font-size: 1.25rem; 
+        line-height: 1.45rem;
+      }
+
+      span.currency {
+        font-size: 0.75rem;
       }
     }
   

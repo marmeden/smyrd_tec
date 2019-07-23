@@ -4,7 +4,12 @@
         <div class="img__cntnt">
           <img :src="post.main_attachment.small" :alt="post.title" :title="post.title">
         </div>
-        <div class="item__badge"><span>{{post.price}}€</span></div>
+        <div class="item__badge">
+          <div class="badge__cntnt">
+            <span class="price">{{post.price}}</span>
+            <span class="currency">€</span>
+          </div>
+        </div>
         <div class="item__meta">
           <div class="item__meta__general">
             <h2 class="meta__title">{{post.title}}</h2>
