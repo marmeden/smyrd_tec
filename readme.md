@@ -2,6 +2,8 @@
 
 SPA built in a MEVN stack with no database
 
+![alt text](https://github.com/marmeden/smyrd_tec/blob/master/smy.png)
+
 ## Installation
 
 After cloning the repo it's needed to run both client and server, as the Express server provides the API to feed the client. 
