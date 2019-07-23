@@ -58,6 +58,7 @@
 
 .feed {
   padding: #{$sm-spacing};
+  padding-bottom: #{$lg-spacing};
   display: grid;
   grid-gap: #{$xs-spacing};
   grid-template-columns: 1fr;
